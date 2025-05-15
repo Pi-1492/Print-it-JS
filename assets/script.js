@@ -41,12 +41,12 @@ for (i=0;i<nb_slide;i++){
 	`;
 	};
 
-parentpoint.innerHTML += nouveaupoint;
-console.log(i);
+	parentpoint.innerHTML += nouveaupoint;
+
 }
 
 flechegauche.addEventListener("click", () =>{
-	console.log("Vous avez cliqué sur la fléche gauche");
+	
 	if(indice === 0){
 		indice = nb_slide-1;
 		parcours = 0;
@@ -59,7 +59,7 @@ flechegauche.addEventListener("click", () =>{
 });
 
 flechedroite.addEventListener("click", () =>{
-	console.log("Vous avez cliqué sur la fléche droite");
+	
 	if(indice === nb_slide-1){
 		indice = 0;
 		parcours = nb_slide-1;
@@ -74,8 +74,6 @@ flechedroite.addEventListener("click", () =>{
 function afficherImageetPoint(indice, parcours){
 	let selecteur = document.getElementById("slide"+indice);
 	let selecteur_precedent = document.getElementById("slide"+parcours);
-	console.log(indice);
-	console.log(slides[indice].image);
 	selecteur.setAttribute("class","dot_selected");
 	selecteur_precedent.setAttribute("class","dot");
 	banniereImage.setAttribute("src","./assets/images/slideshow/"+slides[indice].image);
